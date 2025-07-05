@@ -33,7 +33,7 @@ This project is a modern web application for AMFOS, an accounting firm providing
 
 ```bash
 git clone https://github.com/amfos-official/amfos-frontend.git
-cd amfos-react
+cd amfos-frontend
 ```
 
 2. Install dependencies:
@@ -47,7 +47,7 @@ npm install
 Create a `.env` file in the root directory and add necessary API keys and configuration, for example:
 
 ```
-VITE_API_BASE_URL="https://amfos-payment.onrender.com"
+VITE_API_BASE_URL="http://localhost:4000"
 VITE_RAZORPAY_KEY="your_razorpay_key"
 VITE_WEB3FORMS_ACCESS_KEY="web3forms_key"
 ```
