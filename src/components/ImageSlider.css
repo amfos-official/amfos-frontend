@@ -1,0 +1,96 @@
+.ImageSlider {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.Images {
+    padding-top: 40px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.middleImage {
+    z-index: 2;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0px 0px 30px 1px;
+    border: 3px solid #1E3A8A;
+}
+
+.rightImage {
+    width: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    transform: translateX(40px);
+    filter: blur(3px) saturate(0.5) grayscale(90%);
+}
+
+.leftImage {
+    object-fit: cover;
+    border-radius: 10px;
+    transform: translateX(-40px);
+    filter: blur(3px) saturate(0.5) grayscale(90%);
+}
+
+.buttons {
+    margin-top: 80px;
+    display: flex;
+    gap: 15px;
+    transform: translateY(-50px);
+}
+
+.rightButton {
+    transform: scaleX(-1);
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 100%;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.leftButton {
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 100%;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.dots {
+    height: 5px;
+    width: 5px;
+    border-radius: 100%;
+}
+
+.dots.active {
+    height: 15px;
+    width: 15px;
+    background-color: #1E3A8A;
+    border-radius: 100%;
+}
+
+.dots.passive {
+    height: 8px;
+    width: 8px;
+    background-color: rgba(128, 128, 128, 0.366);
+    border-radius: 100%;
+}
+
+.dotsPlace {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
