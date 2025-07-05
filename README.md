@@ -48,9 +48,8 @@ Create a `.env` file in the root directory and add necessary API keys and config
 
 ```
 VITE_API_BASE_URL=http://localhost:<port>
-RAZORPAY_KEY=your_razorpay_key
-EMAIL_USER=email
-EMAIL_PASS=your_email_password
+VITE_RAZORPAY_KEY=your_razorpay_key
+VITE_WEB3FORMS_ACCESS_KEY="web3forms_key"
 ```
 
 4. Start the development server:
