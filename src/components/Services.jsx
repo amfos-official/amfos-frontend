@@ -92,7 +92,7 @@ const Services = ({ padding }) => {
       <div className="flex flex-col md:flex-row gap-8 mt-12 max-w-[1200px] mx-auto">
         {/* Compliance Card */}
         <div className="bg-white rounded-lg shadow-md p-6 flex-1">
-          <img src="/Assets/img18.png" alt="Compliance" className="w-full h-48 md:h-62 object-[0_40%] rounded-lg object-cover mb-6" />
+          <img src="/assets/img18.png" alt="Compliance" className="w-full h-48 md:h-62 object-[0_40%] rounded-lg object-cover mb-6" />
           <h2 className="text-2xl font-bold mb-4 text-[#111827]">Compliance</h2>
           <ul className="list-disc list-inside text-[#111827] montserrat">
             <li><strong>Taxes:</strong> Personal, Business, and Corporate</li>
@@ -103,7 +103,7 @@ const Services = ({ padding }) => {
 
         {/* Management Card */}
         <div className="bg-white rounded-lg shadow-md p-6 flex-1">
-          <img src="/Assets/img19.png" alt="Management" className="w-full h-48 md:h-62 object-[0_40%] rounded-lg object-cover mb-6" />
+          <img src="/assets/img19.png" alt="Management" className="w-full h-48 md:h-62 object-[0_40%] rounded-lg object-cover mb-6" />
           <h2 className="text-2xl font-bold mb-4 text-[#111827]">Management</h2>
           <ul className="list-disc list-inside text-[#111827] montserrat">
             <li><strong>Bookkeeping:</strong> manage daily transactions</li>
@@ -114,7 +114,7 @@ const Services = ({ padding }) => {
 
         {/* Advisory Card */}
         <div className="bg-white rounded-lg shadow-md p-6 flex-1">
-          <img src="/Assets/img20.png" alt="Advisory" className="w-full h-48 md:h-62 object-[40%_30%] rounded-lg object-cover mb-6" />
+          <img src="/assets/img20.png" alt="Advisory" className="w-full h-48 md:h-62 object-[40%_30%] rounded-lg object-cover mb-6" />
           <h2 className="text-2xl font-bold mb-4 text-[#111827]">Advisory</h2>
           <ul className="list-disc list-inside text-[#111827] montserrat">
             <li><strong>Reporting:</strong> Help directors make informed decisions</li>

@@ -75,7 +75,7 @@ const About = ({ padding }) => {
       </Marquee>
 
       <div className="bg-[#F3F4F6] flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 px-6 md:px-20 pt-12" style={{ paddingLeft: "clamp(32px, 5vw, 96px)", paddingRight: "clamp(32px, 5vw, 96px)" }}>
-        <img src="/Assets/img21.png" alt="Serving Our Community" className="w-full md:w-1/2 max-w-[600px] h-48 md:h-96 rounded-lg object-[right_top] object-cover" />
+        <img src="/assets/img21.png" alt="Serving Our Community" className="w-full md:w-1/2 max-w-[600px] h-48 md:h-96 rounded-lg object-[right_top] object-cover" />
         <div className="w-full md:w-1/2 text-[#111827]">
           <h2 className="lalezar text-4xl font-extrabold mb-6">Serving Our Community</h2>
           <p className="montserrat text-lg leading-relaxed">
@@ -90,25 +90,25 @@ const About = ({ padding }) => {
         <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-24">
           {/* Person 1 */}
           <div className="flex flex-col items-center text-center max-w-xs">
-            <img src="/Assets/team1.jpg" alt="Person 1" className="w-40 drop-shadow-[4px_4px_6px_#111827] h-40 rounded-full object-cover mb-4" />
+            <img src="/assets/team1.jpg" alt="Person 1" className="w-40 drop-shadow-[4px_4px_6px_#111827] h-40 rounded-full object-cover mb-4" />
             <h3 className="text-xl font-semibold montserrat text-[#111827]">Areful Mallick</h3>
             <p className="text-gray-600">CEO & Founder</p>
           </div>
           {/* Person 2 */}
           <div className="flex flex-col items-center text-center max-w-xs">
-            <img src="/Assets/team2.jpg" alt="Person 2" className="w-40 h-40 rounded-full drop-shadow-[4px_4px_6px_#111827] object-cover object-top mb-4" />
+            <img src="/assets/team2.jpg" alt="Person 2" className="w-40 h-40 rounded-full drop-shadow-[4px_4px_6px_#111827] object-cover object-top mb-4" />
             <h3 className="text-xl font-semibold montserrat text-[#111827]">Niwaz Mallick</h3>
             <p className="text-gray-600">Associate</p>
           </div>
           {/* Person 3 */}
           <div className="flex flex-col items-center text-center max-w-xs">
-            <img src="/Assets/team3.jpg" alt="Person 3" className="w-40 h-40 drop-shadow-[4px_4px_6px_#111827] rounded-full object-cover mb-4" />
+            <img src="/assets/team3.jpg" alt="Person 3" className="w-40 h-40 drop-shadow-[4px_4px_6px_#111827] rounded-full object-cover mb-4" />
             <h3 className="text-xl font-semibold montserrat text-[#111827]">Nayedul Alam</h3>
             <p className="text-gray-600">Associate</p>
           </div>
           {/* Person 4 */}
           <div className="flex flex-col items-center text-center max-w-xs">
-            <img src="/Assets/team4.jpg" alt="Person 3" className="w-40 h-40 drop-shadow-[4px_4px_6px_#111827] rounded-full object-top object-cover mb-4" />
+            <img src="/assets/team4.jpg" alt="Person 3" className="w-40 h-40 drop-shadow-[4px_4px_6px_#111827] rounded-full object-top object-cover mb-4" />
             <h3 className="text-xl font-semibold montserrat text-[#111827]">Mohd Usman</h3>
             <p className="text-gray-600">Associate</p>
           </div>

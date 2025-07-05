@@ -55,7 +55,7 @@ const HomePage = ({ padding }) => {
     <div className="relative h-screen w-full">
       <div id="overlay" className="absolute z-[-5] h-full w-full bg-[#00000055]"></div>
       <video
-        src="/Assets/bg-vid1.mp4"
+        src="/assets/bg-vid1.mp4"
         muted
         autoPlay
         loop
@@ -94,7 +94,7 @@ const HomePage = ({ padding }) => {
             </a>
             <div className="absolute -right-24 top-13 leading-tight transform -rotate-12">
               <img
-                src="/Assets/Curly Arrow.png"
+                src="/assets/Curly Arrow.png"
                 className="absolute -left-10 -top-4"
                 alt=""
               />
@@ -115,17 +115,17 @@ const HomePage = ({ padding }) => {
               <div className=" flex items-center  h-[50px]">
                 <div className="relative -right-1  flex items-center">
                   <img
-                    src="/Assets/review1.png"
+                    src="/assets/review1.png"
                     alt="User 1"
                     className="relative w-6 h-6 rounded-full border-1 border-[#F3F4F6]"
                   />
                   <img
-                    src="/Assets/review2.png"
+                    src="/assets/review2.png"
                     alt="User 2"
                     className="relative -left-2 w-6 h-6 rounded-full border-1 border-[#F3F4F6]"
                   />
                   <img
-                    src="/Assets/review3.png"
+                    src="/assets/review3.png"
                     alt="User 3"
                     className="relative -left-4 w-6 h-6 rounded-full border-1 border-[#F3F4F6]"
                   />
@@ -136,7 +136,7 @@ const HomePage = ({ padding }) => {
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <img src="/Assets/rating.png" className="w-[80px]" alt="" />
+                  <img src="/assets/rating.png" className="w-[80px]" alt="" />
                   5.0/5
                 </span>
               </div>

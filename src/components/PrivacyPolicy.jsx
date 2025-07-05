@@ -6,8 +6,8 @@ const PrivacyPolicy = () => {
   }, []);
 
   return (
-<div className="max-w-5xl mx-auto p-10 montserrat text-gray-900 bg-white rounded-lg shadow-lg">
-  <div className="mt-10 space-y-6 leading-relaxed">
+    <div className="max-w-5xl mx-auto p-10 montserrat text-gray-900 bg-white rounded-lg shadow-lg">
+      <div className="mt-10 space-y-6 leading-relaxed">
         <h1 className="text-3xl font-bold mb-4">Privacy Policy</h1>
         <p className="text-base mb-2">Last updated: June 17, 2025</p>
         <p className="text-base mb-2">This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>

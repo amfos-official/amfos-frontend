@@ -10,11 +10,11 @@ const Footer = ({ padding }) => {
 
                 <div className="mb-6 md:mb-0">
                     <div className="flex gap-2 items-center">
-                        <img src="/Assets/location.png" alt="Location" className="w-6 h-6" />
+                        <img src="/assets/location.png" alt="Location" className="w-6 h-6" />
                         <p>IRIS Building, Shop No. C, Near DPS Megacity,<br /> Mahammadpur, Kolkata - 700135</p>
                     </div>
                     <div className="flex gap-2 items-center mt-2">
-                        <img src="/Assets/time.png" alt="Time" className="w-6 h-6" />
+                        <img src="/assets/time.png" alt="Time" className="w-6 h-6" />
                         <div className="">
 
                             <p className="">

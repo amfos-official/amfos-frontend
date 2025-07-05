@@ -42,38 +42,38 @@ const Contact = ({ padding }) => {
             </p>
 
             <div className="flex items-center gap-3 montserrat" style={{ marginBottom: "10px" }}>
-              <img src="/Assets/envelope-solid.svg" alt="Email" className="w-6 h-6 text-[#F97316]" />
+              <img src="/assets/envelope-solid.svg" alt="Email" className="w-6 h-6 text-[#F97316]" />
               <a href="mailto:support@amfos.in" className="text-[#111827] underline hover:text-[#F97316]">
                 support@amfos.in
               </a>
             </div>
 
             <div className="flex items-center gap-3 montserrat" style={{ marginBottom: "20px" }}>
-              <img src="/Assets/phone-solid.svg" alt="Phone" className="w-6 h-6 text-[#F97316]" />
+              <img src="/assets/phone-solid.svg" alt="Phone" className="w-6 h-6 text-[#F97316]" />
               <span className="text-[#111827]">+91 90643 63937, 033 6618 3035</span>
             </div>
 
             <div className="flex items-center gap-3 text-[#F97316] text-2xl" style={{ marginBottom: "30px" }}>
               <a href="https://www.facebook.com/share/19DB33dsgy/?mibextid=wwXIfr" target="_blank" aria-label="Facebook" rel="noreferrer">
-                <img src="/Assets/Facebook.png" alt="Facebook" className="w-6 h-6" />
+                <img src="/assets/Facebook.png" alt="Facebook" className="w-6 h-6" />
               </a>
               <a href="https://www.instagram.com/auditor_kolkata?igsh=NzJpaGV3dGttYXR0&utm_source=qr" target="_blank" aria-label="Instagram" rel="noreferrer">
-                <img src="/Assets/Instagram.png" alt="Instagram" className="w-6 h-6" />
+                <img src="/assets/Instagram.png" alt="Instagram" className="w-6 h-6" />
               </a>
               <a target="_blank" href="https://x.com/ArefulM" aria-label="X" rel="noreferrer">
-                <img src="/Assets/X.png" alt="X" className="w-6 h-6" />
+                <img src="/assets/X.png" alt="X" className="w-6 h-6" />
               </a>
               <a target="_blank" href="https://www.linkedin.com/in/arefulmallickcaintermediate?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" aria-label="linkedIn" rel="noreferrer">
-                <img src="/Assets/LinkedIn.png" alt="LinkedIn" className="w-6 h-6" />
+                <img src="/assets/LinkedIn.png" alt="LinkedIn" className="w-6 h-6" />
               </a>
               <a href="https://t.me/Areful_Mallick" target="_blank" aria-label="telegram" rel="noreferrer">
-                <img src="/Assets/Telegram.png" alt="telegram" className="w-6 h-6" />
+                <img src="/assets/Telegram.png" alt="telegram" className="w-6 h-6" />
               </a>
               <a target="_blank" href="https://wa.me/message/A6GFQ75HVR63G1" aria-label="whatsapp" rel="noreferrer">
-                <img src="/Assets/WhatsApp.png" alt="whatsapp" className="w-6 h-6" />
+                <img src="/assets/WhatsApp.png" alt="whatsapp" className="w-6 h-6" />
               </a>
               <a target="_blank" href="https://maps.app.goo.gl/HKdw5vSgWDSxCYcq5?g_st=iwb" aria-label="google maps" rel="noreferrer">
-                <img src="/Assets/google_maps.png" alt="google maps" className="w-6 h-6" />
+                <img src="/assets/google_maps.png" alt="google maps" className="w-6 h-6" />
               </a>
             </div>
           </div>

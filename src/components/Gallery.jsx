@@ -8,20 +8,20 @@ import { IoIosArrowBack } from "react-icons/io";
 import gsap from 'gsap';
 
 const imageArray = [
-  "/Assets/slider_images/img1.jpg",
-  "/Assets/slider_images/img2.jpg",
-  "/Assets/slider_images/img3.jpg",
-  "/Assets/slider_images/img4.jpg",
-  "/Assets/slider_images/img5.jpg",
-  "/Assets/slider_images/img6.jpg",
-  "/Assets/slider_images/img7.jpg",
-  "/Assets/slider_images/img8.jpg",
-  "/Assets/slider_images/img9.jpg",
-  "/Assets/slider_images/img10.jpg",
-  "/Assets/slider_images/img11.jpg",
-  "/Assets/slider_images/img12.jpg",
-  "/Assets/slider_images/img13.jpg",
-  "/Assets/slider_images/img14.jpg"
+  "/assets/slider_images/img1.jpg",
+  "/assets/slider_images/img2.jpg",
+  "/assets/slider_images/img3.jpg",
+  "/assets/slider_images/img4.jpg",
+  "/assets/slider_images/img5.jpg",
+  "/assets/slider_images/img6.jpg",
+  "/assets/slider_images/img7.jpg",
+  "/assets/slider_images/img8.jpg",
+  "/assets/slider_images/img9.jpg",
+  "/assets/slider_images/img10.jpg",
+  "/assets/slider_images/img11.jpg",
+  "/assets/slider_images/img12.jpg",
+  "/assets/slider_images/img13.jpg",
+  "/assets/slider_images/img14.jpg"
 ];
 
 const Gallery = ({ padding }) => {

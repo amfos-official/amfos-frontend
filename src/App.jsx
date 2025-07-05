@@ -118,7 +118,7 @@ const NavHashLinkWrapper = ({ padding, navslider, navup, navdown }) => {
       <div id="full-nav" className={`lg:hidden z-10 montserrat text-[#F3F4F6] flex flex-col gap-6 justify-center fixed transform transition-transform duration-300 ease-out w-screen h-screen bg-[#10B981]`} style={{ paddingLeft: padding, paddingRight: padding, transform: `translateY(${navslider})` }}>
 
         <div id="menu-close" onClick={navup} className="absolute drop-shadow-[4px_4px_6px_#111827] right-10 top-8 cursor-pointer lg:hidden">
-          <img src="/Assets/Multiply.png" alt="" className="h-10" />
+          <img src="/assets/Multiply.png" alt="" className="h-10" />
         </div>
 
         <div onClick={navup} className="flex flex-col gap-8 text-[32px]">
@@ -140,20 +140,20 @@ const NavHashLinkWrapper = ({ padding, navslider, navup, navdown }) => {
         </div>
 
         <div id="contact-icons" onClick={navup} className="flex gap-2">
-          <a target="_blank" href="https://www.facebook.com/share/19DB33dsgy/?mibextid=wwXIfr"><img src="/Assets/Facebook.png" alt="" /></a>
-          <a target="_blank" href="https://www.instagram.com/auditor_kolkata?igsh=NzJpaGV3dGttYXR0&utm_source=qr"><img src="/Assets/Instagram.png" alt="" /></a>
-          <a target="_blank" href="https://wa.me/message/A6GFQ75HVR63G1"><img src="/Assets/WhatsApp.png" alt="" /></a>
-          <a target="_blank" href="https://x.com/ArefulM"><img src="/Assets/X.png" alt="" /></a>
-          <a target="_blank" href="https://www.linkedin.com/in/arefulmallickcaintermediate?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><img src="/Assets/LinkedIn.png" alt="" /></a>
-          <a target="_blank" href="https://t.me/Areful_Mallick"><img src="/Assets/Telegram.png" alt="" /></a>
-          <a target="_blank" href="https://maps.app.goo.gl/HKdw5vSgWDSxCYcq5?g_st=iwb"><img src="/Assets/google_maps.png" alt="" /></a>
+          <a target="_blank" href="https://www.facebook.com/share/19DB33dsgy/?mibextid=wwXIfr"><img src="/assets/Facebook.png" alt="" /></a>
+          <a target="_blank" href="https://www.instagram.com/auditor_kolkata?igsh=NzJpaGV3dGttYXR0&utm_source=qr"><img src="/assets/Instagram.png" alt="" /></a>
+          <a target="_blank" href="https://wa.me/message/A6GFQ75HVR63G1"><img src="/assets/WhatsApp.png" alt="" /></a>
+          <a target="_blank" href="https://x.com/ArefulM"><img src="/assets/X.png" alt="" /></a>
+          <a target="_blank" href="https://www.linkedin.com/in/arefulmallickcaintermediate?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"><img src="/assets/LinkedIn.png" alt="" /></a>
+          <a target="_blank" href="https://t.me/Areful_Mallick"><img src="/assets/Telegram.png" alt="" /></a>
+          <a target="_blank" href="https://maps.app.goo.gl/HKdw5vSgWDSxCYcq5?g_st=iwb"><img src="/assets/google_maps.png" alt="" /></a>
         </div>
 
       </div>
 
       <div id="navbar" className={`z-5 fixed top-0 w-screen h-[10vh] text-[#F3F4F6] flex justify-between items-center transition-colors duration-300`} style={{ paddingLeft: padding, paddingRight: padding, backgroundColor: navBackground ? '#10B981' : 'transparent' }}>
         <a href="/" id="brand" className="flex justify-center gap-2 items-center">
-          <img src="/Assets/LogoFinal.jpg" alt="" className="max-h-[52px] h-[4vh] min-h-[32px]" />
+          <img src="/assets/LogoFinal.jpg" alt="" className="max-h-[52px] h-[4vh] min-h-[32px]" />
           <h1 className="mochiy drop-shadow-[4px_4px_6px_#111827]" style={{ fontSize: "clamp(20px,3vw ,24px)" }}> AMFOS</h1>
         </a>
 
@@ -170,7 +170,7 @@ const NavHashLinkWrapper = ({ padding, navslider, navup, navdown }) => {
         </div>
 
         <div id="menu-small" onClick={navdown} className="cursor-pointer drop-shadow-[4px_4px_6px_#111827] lg:hidden">
-          <img src="/Assets/Menu.png" alt="" className="h-10" />
+          <img src="/assets/Menu.png" alt="" className="h-10" />
         </div>
 
       </div>
