@@ -2,16 +2,20 @@ import React, { useEffect, useState } from "react";
 
 const TaxUpdate = ({ padding }) => {
     const [posts, setPosts] = useState([]);
-    const ghostHost = import.meta.env.VITE_GHOST_URL;
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch(
-            `${ghostHost}/ghost/api/content/posts/?key=8b05c33cfd72c8bbd044757ad1&limit=2&fields=title,slug,feature_image,excerpt,published_at`
-        )
+        fetch("/taxupdates/wp-json/wp/v2/posts?per_page=2&_fields=id,date,slug,link,title,excerpt")
             .then((res) => res.json())
-            .then((data) => setPosts(data.posts))
-            .catch((err) => console.error("Error fetching posts:", err));
-    }, [ghostHost]);
+            .then((data) => {
+                setPosts(data);
+                setLoading(false);
+            })
+            .catch((err) => {
+                console.error("Error fetching posts:", err);
+                setLoading(false);
+            });
+    }, []);
 
     return (
         <section
@@ -24,43 +28,49 @@ const TaxUpdate = ({ padding }) => {
             }}
         >
             <h2 className="mb-4">📰 Tax Updates</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                {posts.map((post) => (
-                    <article
-                        key={post.slug}
-                        className="flex flex-col md:flex-row gap-4 p-4 border border-gray-300 rounded-lg bg-white"
-                    >
-                        {post.feature_image && (
-                            <img
-                                src={post.feature_image}
-                                alt={post.title}
-                                className="w-full md:w-[120px] md:h-[90px] object-cover rounded-md"
-                            />
-                        )}
-                        <div className="flex-1">
-                            <h3 className="mb-2">{post.title}</h3>
-                            <small className="text-gray-600">
-                                {new Date(post.published_at).toLocaleString("en-IN", {
-                                    day: "2-digit",
-                                    month: "short",
-                                    year: "numeric",
-                                    hour: "2-digit",
-                                    minute: "2-digit",
-                                })}
-                            </small>
-                            <p className="mt-2">{post.excerpt}</p>
-                            <a
-                                href={`${ghostHost}/${post.slug}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-blue-600 font-bold mt-2 inline-block"
-                            >
-                                Read more →
-                            </a>
-                        </div>
-                    </article>
-                ))}
-            </div>
+
+            {loading ? (
+                <p>Loading...</p>
+            ) : posts.length === 0 ? (
+                <p className="text-gray-600 italic">No content found.</p>
+            ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    {posts.map((post) => (
+                        <article
+                            key={post.id}
+                            className="flex flex-col md:flex-row gap-4 p-4 border border-gray-300 rounded-lg bg-white"
+                        >
+                            <div className="flex-1">
+                                <h3
+                                    className="mb-2 text-lg font-semibold"
+                                    dangerouslySetInnerHTML={{ __html: post.title.rendered }}
+                                />
+                                <small className="text-gray-600">
+                                    {new Date(post.date).toLocaleString("en-IN", {
+                                        day: "2-digit",
+                                        month: "short",
+                                        year: "numeric",
+                                        hour: "2-digit",
+                                        minute: "2-digit",
+                                    })}
+                                </small>
+                                <p
+                                    className="mt-2"
+                                    dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
+                                />
+                                <a
+                                    href={post.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-blue-600 font-bold mt-2 inline-block"
+                                >
+                                    Read more →
+                                </a>
+                            </div>
+                        </article>
+                    ))}
+                </div>
+            )}
         </section>
     );
 };

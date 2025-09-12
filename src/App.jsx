@@ -114,8 +114,8 @@ const NavHashLinkWrapper = ({ padding, navslider, navup, navdown }) => {
   }, [location.pathname, location.state]);
 
   const ghostHost =
-    import.meta.env.VITE_GHOST_URL;
-    
+    '/taxupdates';
+
   return (
     <>
       <Loader />
