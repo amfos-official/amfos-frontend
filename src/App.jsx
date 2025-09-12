@@ -21,6 +21,7 @@ import {
 import TermsAndConditions from "./components/TermsAndConditions";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import Footer from "./components/Footer";
+import TaxUpdate from "./components/TaxUpdate";
 
 const App = () => {
 
@@ -112,6 +113,9 @@ const NavHashLinkWrapper = ({ padding, navslider, navup, navdown }) => {
     };
   }, [location.pathname, location.state]);
 
+  const ghostHost =
+    import.meta.env.VITE_GHOST_URL;
+    
   return (
     <>
       <Loader />
@@ -125,6 +129,17 @@ const NavHashLinkWrapper = ({ padding, navslider, navup, navdown }) => {
 
           <NavHashLink to="about" className=" hover:underline drop-shadow-[4px_4px_6px_#111827]  hover:text-[#F97316] active:text-[#F97316]  font-semibold">About</NavHashLink>
           <NavHashLink to="services" className=" hover:underline drop-shadow-[4px_4px_6px_#111827] hover:text-[#F97316] active:text-[#F97316] font-semibold">Services</NavHashLink>
+          <a
+            href={ghostHost}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative text-[28px] font-semibold flex items-center gap-3 hover:underline hover:text-[#F97316]"
+          >
+            Tax Updates
+            <span className="text-sm bg-[#F97316] text-white px-2 py-0.5 rounded-full animate-pulse">
+              NEW
+            </span>
+          </a>
           <NavHashLink to="appointment" className=" hover:underline drop-shadow-[4px_4px_6px_#111827] hover:text-[#F97316] active:text-[#F97316] font-semibold">Book an Appointment</NavHashLink>
           <NavHashLink to="payment" className="text-[24px]  drop-shadow-[4px_4px_6px_#11182784] font-semibold">
             <button className="bg-[#F97316]   px-3 py-1 rounded font-semibold">
@@ -161,6 +176,17 @@ const NavHashLinkWrapper = ({ padding, navslider, navup, navdown }) => {
 
           <NavHashLink to="about" className="text-[20px] drop-shadow-[4px_4px_6px_#111827] hover:underline  hover:text-[#F97316] focus:text-[#F97316]  font-semibold">About</NavHashLink>
           <NavHashLink to="services" className="text-[20px] hover:underline  drop-shadow-[4px_4px_6px_#111827] hover:text-[#F97316] focus:text-[#F97316] font-semibold">Services</NavHashLink>
+          <a
+            href={ghostHost}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative text-[20px] font-semibold hover:underline drop-shadow-[4px_4px_6px_#111827] hover:text-[#F97316] focus:text-[#F97316] flex items-center gap-2"
+          >
+            Tax Updates
+            <span className="text-xs bg-[#F97316] text-white px-2 py-0.5 rounded-full animate-pulse">
+              NEW
+            </span>
+          </a>
           <NavHashLink to="appointment" className="text-[20px] hover:underline drop-shadow-[4px_4px_6px_#111827] hover:text-[#F97316] focus:text-[#F97316] font-semibold">Book an Appointment</NavHashLink>
           <NavHashLink to="payment" className="text-[16px]  font-semibold">
             <button className="bg-[#f97416e4] hover:bg-[#f97416] text-[#F3F4F6]  drop-shadow-[4px_4px_6px_#11182784] cursor-pointer px-3 py-1 rounded font-semibold">
@@ -184,6 +210,7 @@ const NavHashLinkWrapper = ({ padding, navslider, navup, navdown }) => {
             <Gallery padding={padding} />
             <Appointment padding={padding} />
             <Payment padding={padding} />
+            <TaxUpdate padding={padding} />
             <Contact padding={padding} />
           </>
         } />

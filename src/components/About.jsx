@@ -108,8 +108,14 @@ const About = ({ padding }) => {
           </div>
           {/* Person 4 */}
           <div className="flex flex-col items-center text-center max-w-xs">
-            <img src="/assets/team4.jpg" alt="Person 3" className="w-40 h-40 drop-shadow-[4px_4px_6px_#111827] rounded-full object-top object-cover mb-4" />
+            <img src="/assets/team4.jpg" alt="Person 4" className="w-40 h-40 drop-shadow-[4px_4px_6px_#111827] rounded-full object-top object-cover mb-4" />
             <h3 className="text-xl font-semibold montserrat text-[#111827]">Mohd Usman</h3>
+            <p className="text-gray-600">Associate</p>
+          </div>
+          {/* Person 5 */}
+          <div className="flex flex-col items-center text-center max-w-xs">
+            <img src="/assets/team5.jpg" alt="Person 5" className="w-40 h-40 drop-shadow-[4px_4px_6px_#111827] rounded-full object-top object-cover mb-4" />
+            <h3 className="text-xl font-semibold montserrat text-[#111827]">Nur Mahammad</h3>
             <p className="text-gray-600">Associate</p>
           </div>
         </div>

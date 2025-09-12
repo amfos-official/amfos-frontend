@@ -6,8 +6,9 @@ const Payment = ({ padding }) => {
     const [loading, setLoading] = useState(false);
     const [showAmountPopup, setShowAmountPopup] = useState(false);
     const [amount, setAmount] = useState("");
+    const [paymentType, setPaymentType] = useState(""); // new
+    const [upiQrUrl, setUpiQrUrl] = useState(""); // new
 
-    // Load Razorpay script
     const loadScript = (src) => {
         return new Promise((resolve) => {
             const script = document.createElement("script");
@@ -22,7 +23,6 @@ const Payment = ({ padding }) => {
         loadScript("https://checkout.razorpay.com/v1/checkout.js");
     }, []);
 
-    // New useEffect to control scroll based on popup and loading state
     useEffect(() => {
         if (showAmountPopup || loading) {
             document.body.style.overflow = "hidden";
@@ -37,6 +37,8 @@ const Payment = ({ padding }) => {
     const closePopup = () => {
         setShowAmountPopup(false);
         setAmount("");
+        setPaymentType("");
+        setUpiQrUrl("");
     };
 
     const handlePayClick = () => {
@@ -45,33 +47,21 @@ const Payment = ({ padding }) => {
 
     const handleAmountChange = (e) => {
         const val = e.target.value;
-        // Allow only numbers
         if (/^\d*$/.test(val)) {
             setAmount(val);
         }
     };
 
-    const onPayment = async (payAmount) => {
+    // --- Razorpay payment ---
+    const onGatewayPayment = async (payAmount) => {
         if (!payAmount || Number(payAmount) <= 0) {
-            Swal.fire({
-                title: "Invalid Amount",
-                text: "Please enter a valid amount greater than zero.",
-                icon: "warning",
-            });
+            Swal.fire("Invalid Amount", "Please enter a valid amount greater than zero.", "warning");
             return;
         }
-
         try {
             setLoading(true);
-
-            const options = {
-                amount: Number(payAmount)
-            };
-
             const baseURL = import.meta.env.VITE_API_BASE_URL;
-
-            // Create order on backend
-            const { data } = await axios.post(`${baseURL}/api/createOrder`, options);
+            const { data } = await axios.post(`${baseURL}/api/createOrder`, { amount: Number(payAmount) });
 
             const paymentObject = new window.Razorpay({
                 key: import.meta.env.VITE_RAZORPAY_KEY,
@@ -87,49 +77,29 @@ const Payment = ({ padding }) => {
                         order_id: response.razorpay_order_id,
                         signature: response.razorpay_signature,
                     };
-                    // Verify payment on backend
                     axios
                         .post(`${baseURL}/api/verifyPayment`, paymentData)
                         .then((res) => {
                             if (res?.data?.success) {
-                                Swal.fire({
-                                    title: "Payment Successful!",
-                                    text: "Your payment has been processed successfully.",
-                                    icon: "success",
-                                }).then(() => {
-                                    setLoading(false);
-                                    closePopup();
-                                });
+                                Swal.fire("Payment Successful!", "Your payment has been processed successfully.", "success")
+                                    .then(() => {
+                                        setLoading(false);
+                                        closePopup();
+                                    });
                             } else {
-                                Swal.fire({
-                                    title: "Payment Failed",
-                                    text: "Your payment was not successful. Please try again.",
-                                    icon: "error",
-                                }).then(() => {
-                                    setLoading(false);
-                                });
+                                Swal.fire("Payment Failed", "Your payment was not successful. Please try again.", "error")
+                                    .then(() => setLoading(false));
                             }
                         })
                         .catch(() => {
-                            Swal.fire({
-                                title: "Error",
-                                text: "An error occurred during payment verification.",
-                                icon: "error",
-                            }).then(() => {
-                                setLoading(false);
-                            });
+                            Swal.fire("Error", "An error occurred during payment verification.", "error")
+                                .then(() => setLoading(false));
                         });
                 },
                 modal: {
                     ondismiss: () => {
-                        Swal.fire({
-                            title: "Payment Cancelled",
-                            text: "You cancelled the payment.",
-                            icon: "info",
-                        }).then(() => {
-                            // Close payment popup and enable scrolling
-                            setShowAmountPopup(false);
-                        });
+                        Swal.fire("Payment Cancelled", "You cancelled the payment.", "info")
+                            .then(() => setShowAmountPopup(false));
                     },
                 },
             });
@@ -138,12 +108,21 @@ const Payment = ({ padding }) => {
             setLoading(false);
         } catch (error) {
             setLoading(false);
-            Swal.fire({
-                title: "Error",
-                text: "An error occurred during payment processing.",
-                icon: "error",
-            });
+            Swal.fire("Error", "An error occurred during payment processing.", "error");
         }
+    };
+
+    // --- UPI QR Payment ---
+    const onUpiPayment = (payAmount) => {
+        if (!payAmount || Number(payAmount) <= 0) {
+            Swal.fire("Invalid Amount", "Please enter a valid amount greater than zero.", "warning");
+            return;
+        }
+        const encoded = encodeURIComponent(
+            `upi://pay?pa=amfos@sbi&pn=The AM Financial Online Shoppe&am=${payAmount}&cu=INR`
+        );
+        const qr = `https://api.qrserver.com/v1/create-qr-code/?size=225x225&data=${encoded}`;
+        setUpiQrUrl(qr);
     };
 
     return (
@@ -179,7 +158,7 @@ const Payment = ({ padding }) => {
 
             {showAmountPopup && (
                 <div className="fixed inset-0 bg-[#11182796] flex items-center justify-center z-10">
-                    <div className="bg-white rounded-lg p-6 w-11/12 max-w-md relative" style={{ padding: "1.5rem" }}>
+                    <div className="bg-white rounded-lg p-6 w-11/12 max-w-md relative">
                         <button
                             className="absolute text-4xl top-4 right-6 text-gray-600 hover:text-gray-900"
                             onClick={closePopup}
@@ -187,26 +166,58 @@ const Payment = ({ padding }) => {
                         >
                             &times;
                         </button>
-                        <h2 className="text-xl font-semibold mb-4">Enter amount of your bill</h2>
-                        <input
-                            type="number"
-                            value={amount}
-                            onChange={handleAmountChange}
-                            placeholder="Enter amount"
-                            className="border border-gray-300 rounded-md p-2 w-full mb-4"
-                            autoFocus
-                        />
-                        <button
-                            type="button"
-                            className={`cursor-pointer rounded-md font-semibold transition w-full py-2 ${amount && Number(amount) > 0
-                                ? "bg-blue-600 text-white hover:bg-blue-700"
-                                : "bg-gray-400 text-gray-200 cursor-not-allowed"
-                                }`}
-                            onClick={() => onPayment(amount)}
-                            disabled={!amount || Number(amount) <= 0}
-                        >
-                            Pay
-                        </button>
+
+                        {!paymentType && (
+                            <>
+                                <h2 className="text-xl font-semibold mb-4">Enter amount of your bill</h2>
+                                <input
+                                    type="number"
+                                    value={amount}
+                                    onChange={handleAmountChange}
+                                    placeholder="Enter amount"
+                                    className="border border-gray-300 rounded-md p-2 w-full mb-4"
+                                    autoFocus
+                                />
+                                <div className="flex gap-2">
+                                    <button
+                                        type="button"
+                                        className={`w-1/2 rounded-md font-semibold py-2 transition ${amount && Number(amount) > 0
+                                                ? "bg-blue-600 text-white hover:bg-blue-700"
+                                                : "bg-gray-400 text-gray-200 cursor-not-allowed"
+                                            }`}
+                                        disabled={!amount || Number(amount) <= 0}
+                                        onClick={() => {
+                                            setPaymentType("gateway");
+                                            onGatewayPayment(amount);
+                                        }}
+                                    >
+                                        Pay via Gateway
+                                    </button>
+                                    <button
+                                        type="button"
+                                        className={`w-1/2 rounded-md font-semibold py-2 transition ${amount && Number(amount) > 0
+                                                ? "bg-green-600 text-white hover:bg-green-700"
+                                                : "bg-gray-400 text-gray-200 cursor-not-allowed"
+                                            }`}
+                                        disabled={!amount || Number(amount) <= 0}
+                                        onClick={() => {
+                                            setPaymentType("upi");
+                                            onUpiPayment(amount);
+                                        }}
+                                    >
+                                        Pay via UPI
+                                    </button>
+                                </div>
+                            </>
+                        )}
+
+                        {paymentType === "upi" && upiQrUrl && (
+                            <div className="text-center mt-4">
+                                <h2 className="text-xl font-semibold mb-4">Scan to Pay</h2>
+                                <img src={upiQrUrl} alt="UPI QR" className="mx-auto" />
+                                <p className="mt-2 text-sm text-gray-600">Use any UPI app to scan and pay</p>
+                            </div>
+                        )}
                     </div>
                 </div>
             )}
