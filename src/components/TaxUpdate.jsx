@@ -22,12 +22,13 @@ const TaxUpdate = ({ padding }) => {
             className="bg-[#F3F4F6]"
             id="taxupdate"
             style={{
-                paddingLeft: padding,
-                paddingRight: padding,
-                paddingTop: "98px",
+                padding: padding
             }}
         >
-            <h2 className="mb-4">📰 Tax Updates</h2>
+            {/* <p className="text-xs font-bold uppercase underline text-[#1E3A8A]">TAX UPDATES</p> */}
+            <h1 className="lalezar text-5xl lg:text-7xl font-extrabold text-[#111827]" style={{ marginBottom: "25px" }}>
+                Latest Tax Updates
+            </h1>
 
             {loading ? (
                 <p>Loading...</p>

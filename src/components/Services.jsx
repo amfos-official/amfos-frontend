@@ -6,87 +6,74 @@ const Services = ({ padding }) => {
       <p className="text-xs font-bold uppercase underline text-[#1E3A8A] ">SERVICES</p>
       <h1 className="lalezar  text-5xl lg:text-7xl font-extrabold text-[#111827]" style={{ marginBottom: "60px" }}>What We Do Best</h1>
       <div className="flex flex-wrap gap-4 montserrat">
-        < a href="#appointment" className="border border-gray-400 rounded-full  text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
+        <a href="https://amfos.in/taxupdates/category/income-tax-filing/" target="_blank" className="border border-gray-400 rounded-full text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
           Income Tax Filing
-        </ a>
-        < a href="#appointment" className="border border-gray-400 rounded-full     text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
+        </a>
+        <a href="https://amfos.in/taxupdates/category/tds/" target="_blank" className="border border-gray-400 rounded-full text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
           TDS
-        </ a>
-        < a href="#appointment" className="border border-gray-400 rounded-full     text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
+        </a>
+        <a href="https://amfos.in/taxupdates/category/tcs/" target="_blank" className="border border-gray-400 rounded-full text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
           TCS
-        </ a>
-        < a href="#appointment" className="border border-gray-400 rounded-full     text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
+        </a>
+        <a href="https://amfos.in/taxupdates/category/pf/" target="_blank" className="border border-gray-400 rounded-full text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
           PF
-        </ a>
-        < a href="#appointment" className="border border-gray-400 rounded-full     text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
+        </a>
+        <a href="https://amfos.in/taxupdates/category/esic/" target="_blank" className="border border-gray-400 rounded-full text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
           ESIC
-        </ a>
-        < a href="#appointment" className="border border-gray-400 rounded-full     text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
+        </a>
+        <a href="https://amfos.in/taxupdates/category/gst/" target="_blank" className="border border-gray-400 rounded-full text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
           GST
-        </ a>
-        < a href="#appointment" className="border border-gray-400 rounded-full     text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
+        </a>
+        <a href="https://amfos.in/taxupdates/category/iso/" target="_blank" className="border border-gray-400 rounded-full text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
           ISO
-        </ a>
-
-        < a href="#appointment" className="border border-gray-400 rounded-full     text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
+        </a>
+        <a href="https://amfos.in/taxupdates/category/trademark/"  target="_blank" className="border border-gray-400 rounded-full text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
           Trademark
-        </ a>
-        < a href="#appointment" className="border border-gray-400 rounded-full     text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
+        </a>
+        <a href="https://amfos.in/taxupdates/category/professional-tax/" target="_blank" className="border border-gray-400 rounded-full text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
           Professional Tax
-        </ a>
-
-        < a href="#appointment" className="border border-gray-400 rounded-full     text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
-          <p> FSSAI (Food Licence / Registration)</p>
-        </ a>
-
-        < a href="#appointment" className="border border-gray-400 rounded-full     text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
+        </a>
+        <a href="https://amfos.in/taxupdates/category/fssai-food-licence/" target="_blank" className="border border-gray-400 rounded-full text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
+          FSSAI (Food Licence / Registration)
+        </a>
+        <a href="https://amfos.in/taxupdates/category/scoiety/" target="_blank" className="border border-gray-400 rounded-full text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
           Scoiety
-        </ a>
-
-        < a href="#appointment" className="border border-gray-400 rounded-full     text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
+        </a>
+        <a href="https://amfos.in/taxupdates/category/trust/" target="_blank" className="border border-gray-400 rounded-full text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
           Trust
-        </ a>
-
-        < a href="#appointment" className="border border-gray-400 rounded-full     text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
-          <p> Company Information (Public / Private)</p>
-        </ a>
-
-        < a href="#appointment" className="border border-gray-400 rounded-full     text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
+        </a>
+        <a href="https://amfos.in/taxupdates/category/company-information/" target="_blank" className="border border-gray-400 rounded-full text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
+          Company Information (Public / Private)
+        </a>
+        <a href="https://amfos.in/taxupdates/category/llp/" target="_blank" className="border border-gray-400 rounded-full text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
           LLP
-        </ a>
-
-        < a href="#appointment" className="border border-gray-400 rounded-full     text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
+        </a>
+        <a href="https://amfos.in/taxupdates/category/msme/" target="_blank" className="border border-gray-400 rounded-full text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
           MSME
-        </ a>
-
-        < a href="#appointment" className="border border-gray-400 rounded-full     text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
+        </a>
+        <a href="https://amfos.in/taxupdates/category/tax-audit/" target="_blank" className="border border-gray-400 rounded-full text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
           Tax Audit
-        </ a>
-
-        < a href="#appointment" className="border border-gray-400 rounded-full     text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
+        </a>
+        <a href="https://amfos.in/taxupdates/category/trade-licence/" target="_blank" className="border border-gray-400 rounded-full text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
           Trade Licence
-        </ a>
-
-        < a href="#appointment" className="border border-gray-400 rounded-full     text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
+        </a>
+        <a href="https://amfos.in/taxupdates/category/stock-audit/" target="_blank" className="border border-gray-400 rounded-full text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
           Stock Audit
-        </ a>
-
-        < a href="#appointment" className="border border-gray-400 rounded-full     text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
+        </a>
+        <a href="https://amfos.in/taxupdates/category/dsc-digital-signature/" target="_blank" className="border border-gray-400 rounded-full text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
           DSC (Digital Signature Certificate)
-        </ a>
-
-        < a href="#appointment" className="border border-gray-400 rounded-full     text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
+        </a>
+        <a href="https://amfos.in/taxupdates/category/loan-projection/"  target="_blank" className="border border-gray-400 rounded-full text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
           Loan Projection
-        </ a>
-
-        < a href="#appointment" className="border border-gray-400 rounded-full     text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
+        </a>
+        <a href="https://amfos.in/taxupdates/category/statutory-audit/" target="_blank" className="border border-gray-400 rounded-full text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
           Statutory Audit
-        </ a>
-        < a href="#appointment" className="border border-gray-400 rounded-full     text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
+        </a>
+        <a href="https://amfos.in/taxupdates/category/last-3-years-itr/"  target="_blank" className="border border-gray-400 rounded-full text-gray-700 font-medium hover:bg-gray-200 transition cursor-pointer hover:text-[#1E3A8A]" style={{ padding: "6px 18px" }}>
           Last 3 Year's ITR Return
-        </ a>
-
+        </a>
       </div>
+
 
       {/* Three cards section */}
       <div className="flex flex-col md:flex-row gap-8 mt-12 max-w-[1200px] mx-auto">

@@ -265,18 +265,18 @@ const Appointment = ({ padding }) => {
             });
           })
         },
-      modal: {
-        ondismiss: () => {
-          Swal.fire({
-            title: "Payment Cancelled",
-            text: "You cancelled the payment.",
-            icon: "info",
-          }).then(() => {
-            // Close payment popup and enable scrolling
-            setShowPaymentPopup(false);
-          });
+        modal: {
+          ondismiss: () => {
+            Swal.fire({
+              title: "Payment Cancelled",
+              text: "You cancelled the payment.",
+              icon: "info",
+            }).then(() => {
+              // Close payment popup and enable scrolling
+              setShowPaymentPopup(false);
+            });
+          },
         },
-      },
       })
       paymentObject.open();
       setLoading(false);
@@ -297,7 +297,7 @@ const Appointment = ({ padding }) => {
 
 
   return (
-    <div id="appointment" className="bg-[#F3F4F6]" style={{ paddingLeft: padding, paddingRight: padding, paddingTop: "98px" }}>
+    <div id="appointment" className="bg-[#F3F4F6]" style={{ padding: padding }}>
 
       {loading && (
         <div className="fixed inset-0 bg-[#111827ae]  z-20 flex items-center justify-center">
@@ -305,7 +305,7 @@ const Appointment = ({ padding }) => {
         </div>
       )}
 
-      <p className="text-xs font-bold uppercase underline text-[#1E3A8A]">BOOK AN APPOINTMENT</p>
+      {/* <p className="text-xs font-bold uppercase underline text-[#1E3A8A]">BOOK AN APPOINTMENT</p> */}
       <h1 className="lalezar text-5xl lg:text-7xl font-extrabold text-[#111827]" style={{ marginBottom: "60px" }}>
         Let’s Talk Taxes —
       </h1>
@@ -332,86 +332,120 @@ const Appointment = ({ padding }) => {
       </div>
 
       {showBookingOptions && !showSchedulePopup && !showPaymentPopup && (
-        <div className="flex flex-col md:flex-row md:items-center  gap-8 md:gap-4 " style={{ marginTop: "1rem" }}>
-          <div className="relative  flex flex-col max-w-xs">
-            <label className="absolute font-semibold text-gray-700 left-1.5 -top-6" >Choose Date</label>
-            <input
-              type="date"
-              className="cursor-pointer border border-gray-300 rounded-md w-full"
-              value={selectedDate}
-              min={new Date().toISOString().split("T")[0]}
-              onChange={handleDateChange}
-              style={{ padding: "0.5rem", }}
-            />
-          </div>
+        <div className="flex flex-col lg:flex-row lg:flex-wrap gap-6 mt-6 w-full">
+          <div className="flex flex-col md:flex-row w-full gap-4">
+            {/* Choose Date */}
+            <div className="flex flex-col flex-1">
+              <label className="mb-2 font-semibold text-gray-700">Choose Date</label>
+              <input
+                type="date"
+                className="cursor-pointer border border-gray-300 rounded-md w-full"
+                value={selectedDate}
+                min={new Date().toISOString().split("T")[0]}
+                onChange={handleDateChange}
+                style={{ padding: "0.75rem" }}
+              />
+            </div>
 
-          <div className="relative flex flex-col max-w-xs">
-            <label className="absolute -top-6 left-1.5 font-semibold text-gray-700" >Choose Slot</label>
-            <select
-              className="cursor-pointer border border-gray-300 rounded-md w-full"
-              style={{ padding: "0.5rem" }}
-              value={selectedTime}
-              onChange={handleTimeChange}
-            >
-              <option value="">Select a time slot</option>
-              {(() => {
-                const now = new Date();
-                const selectedDateObj = new Date(selectedDate);
-                const isToday = selectedDateObj.toDateString() === now.toDateString();
-                const timeSlots = [];
-                for (let i = 9; i <= 22; i++) {
-                  const hour = i;
-                  const timeString = hour < 10 ? `0${hour}:00` : `${hour}:00`;
-                  const isPast = isToday && hour <= now.getHours();
-                  if (!isPast) {
-                    timeSlots.push(
-                      <option key={timeString} value={timeString}>
-                        {hour === 12 ? `12:00 PM` : hour > 12 ? `${hour - 12}:00 PM` : `${hour}:00 AM`}
-                      </option>
-                    );
+            {/* Choose Slot */}
+            <div className="flex flex-col flex-1">
+              <label className="mb-2 font-semibold text-gray-700">Choose Slot</label>
+              <select
+                className="cursor-pointer border border-gray-300 rounded-md w-full"
+                style={{ padding: "0.75rem" }}
+                value={selectedTime}
+                onChange={handleTimeChange}
+              >
+                <option value="">Select a time slot</option>
+                {(() => {
+                  const now = new Date();
+                  const selectedDateObj = new Date(selectedDate);
+                  const isToday = selectedDateObj.toDateString() === now.toDateString();
+                  const timeSlots = [];
+                  for (let i = 9; i <= 22; i++) {
+                    const hour = i;
+                    const timeString = hour < 10 ? `0${hour}:00` : `${hour}:00`;
+                    const isPast = isToday && hour <= now.getHours();
+                    if (!isPast) {
+                      timeSlots.push(
+                        <option key={timeString} value={timeString}>
+                          {hour === 12
+                            ? `12:00 PM`
+                            : hour > 12
+                              ? `${hour - 12}:00 PM`
+                              : `${hour}:00 AM`}
+                        </option>
+                      );
+                    }
                   }
-                }
-                if (timeSlots.length === 0) {
-                  Swal.fire({
-                    title: "No Available Slots",
-                    text: "Today is fully booked. Please book for tomorrow or another day.",
-                    icon: "info"
-                  }).then(() => {
-                    setSelectedDate("");
-                    setSelectedTime("");
-                  });
-                }
-                return timeSlots.length > 0 ? timeSlots : null;
-              })()}
-            </select>
+                  if (timeSlots.length === 0) {
+                    Swal.fire({
+                      title: "No Available Slots",
+                      text: "Today is fully booked. Please book for tomorrow or another day.",
+                      icon: "info",
+                    }).then(() => {
+                      setSelectedDate("");
+                      setSelectedTime("");
+                    });
+                  }
+                  return timeSlots.length > 0 ? timeSlots : null;
+                })()}
+              </select>
+            </div>
           </div>
 
-          <div className="relative flex flex-col max-w-xs">
-            <label className="absolute -top-6 left-1.5 font-semibold text-gray-700" >Session Duration</label>
-            <select
-              className="cursor-pointer border border-gray-300 rounded-md w-full"
-              style={{ padding: "0.5rem" }}
-              value={sessionDuration}
-              onChange={handleSessionChange}
-            >
-              <option value="60">1 hr | ₹1000</option>
-              <option value="30">30 mins | ₹500</option>
-            </select>
+
+          <div className="flex flex-col md:flex-row w-full gap-4">
+            {/* Session Duration */}
+            <div className="flex flex-col flex-1">
+              <label className="mb-2 font-semibold text-gray-700">Session Duration</label>
+              <select
+                className="cursor-pointer border border-gray-300 rounded-md w-full"
+                style={{ padding: "0.75rem" }}
+                value={sessionDuration}
+                onChange={handleSessionChange}
+              >
+                <option value="60">1 hr | ₹1000</option>
+                <option value="30">30 mins | ₹500</option>
+              </select>
+            </div>
+
+            {/* Button */}
+            <div className="flex flex-1 items-end">
+              <button
+                className={`w-full border rounded-md font-semibold transition
+        ${selectedDate && selectedTime
+                    ? "border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
+                    : "border-gray-400 text-gray-400 cursor-not-allowed"
+                  }`}
+                style={{ padding: "0.75rem 1.5rem" }}
+                onClick={selectedDate && selectedTime ? handleScheduleClick : undefined}
+                disabled={!(selectedDate && selectedTime)}
+              >
+                Schedule Meeting
+              </button>
+            </div>
           </div>
 
-          <button
-            className={`cursor-pointer border rounded-md font-semibold transition mt-2 md:mt-0 md:ml-4 md:w-auto w-full max-w-xs ${selectedDate && selectedTime
-              ? "border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
-              : "border-gray-400 text-gray-400 cursor-not-allowed"
-              }`}
-            style={{ paddingTop: "0.5rem", paddingBottom: "0.5rem", paddingLeft: "1.5rem", paddingRight: "1.5rem" }}
-            onClick={selectedDate && selectedTime ? handleScheduleClick : undefined}
-            disabled={!(selectedDate && selectedTime)}
-          >
-            Schedule Meeting
-          </button>
         </div>
       )}
+
+      {/* Sticky Button on Mobile */}
+      <div className="fixed bottom-0 left-0 right-0 bg-white p-4 shadow-md lg:hidden">
+        <button
+          className={`w-full border rounded-md font-semibold transition 
+      ${selectedDate && selectedTime
+              ? "border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
+              : "border-gray-400 text-gray-400 cursor-not-allowed"
+            }`}
+          style={{ padding: "0.75rem 1.5rem" }}
+          onClick={selectedDate && selectedTime ? handleScheduleClick : undefined}
+          disabled={!(selectedDate && selectedTime)}
+        >
+          Schedule Meeting
+        </button>
+      </div>
+
 
       {/* Schedule Meeting Popup */}
       {showSchedulePopup && (

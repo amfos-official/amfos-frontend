@@ -129,7 +129,7 @@ const Payment = ({ padding }) => {
         <div
             id="payment"
             className="bg-[#F3F4F6]"
-            style={{ paddingLeft: padding, paddingRight: padding, paddingTop: "98px" }}
+            style={{ padding: padding }}
         >
             {loading && (
                 <div className="fixed inset-0 bg-[#111827ae] z-20 flex items-center justify-center">
@@ -137,7 +137,7 @@ const Payment = ({ padding }) => {
                 </div>
             )}
 
-            <p className="text-xs font-bold uppercase underline text-[#1E3A8A]">PAYMENT CORNER</p>
+            {/* <p className="text-xs font-bold uppercase underline text-[#1E3A8A]">PAYMENT CORNER</p> */}
             <h1 className="lalezar text-5xl lg:text-7xl font-extrabold text-[#111827]" style={{ marginBottom: "25px" }}>
                 Secure Payment
             </h1>

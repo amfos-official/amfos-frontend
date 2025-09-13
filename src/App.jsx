@@ -58,14 +58,19 @@ const NavHashLinkWrapper = ({ padding, navslider, navup, navdown }) => {
   const NavHashLink = ({ to, className, children }) => {
     const handleClick = (e) => {
       e.preventDefault();
-      if (location.pathname === "/") {
-        // Already on home page, just scroll
-        const element = document.getElementById(to);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
-      } else {
-        // Navigate to home page and then scroll after navigation
+      const element = document.getElementById(to);
+      if (element) {
+        // Offset for fixed navbar
+        const yOffset = -200; // Adjust to your navbar height
+        const y = element.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      }
+
+      // Close mobile nav if open
+      navup();
+
+      // If not on homepage, navigate first
+      if (location.pathname !== "/") {
         navigate("/", { state: { scrollToId: to } });
       }
     };
@@ -77,8 +82,8 @@ const NavHashLinkWrapper = ({ padding, navslider, navup, navdown }) => {
     );
   };
 
+
   useEffect(() => {
-    // Function to handle scroll event on homepage
     const handleScroll = () => {
       if (window.scrollY > 50) {
         setNavBackground(true);
@@ -88,30 +93,20 @@ const NavHashLinkWrapper = ({ padding, navslider, navup, navdown }) => {
     };
 
     if (location.pathname === "/") {
-      // On homepage, add scroll listener
+      // Attach scroll listener only on homepage
       window.addEventListener("scroll", handleScroll);
-      // Set initial background based on scroll position
-      handleScroll();
-
-      // Scroll to element if scrollToId is present in location state
-      if (location.state && location.state.scrollToId) {
-        const element = document.getElementById(location.state.scrollToId);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
-        // Clear scrollToId from history state to prevent repeated scrolling
-        window.history.replaceState({}, document.title);
-      }
+      handleScroll(); // set initial state
     } else {
-      // On other pages, always show background
+      // On other pages, always keep nav background
       setNavBackground(true);
     }
 
-    // Cleanup scroll listener on unmount or path change
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [location.pathname, location.state]);
+  }, [location.pathname]);
+
+
 
   const ghostHost =
     '/taxupdates';
@@ -208,9 +203,26 @@ const NavHashLinkWrapper = ({ padding, navslider, navup, navdown }) => {
             <About padding={padding} />
             <Services padding={padding} />
             <Gallery padding={padding} />
-            <Appointment padding={padding} />
-            <Payment padding={padding} />
-            <TaxUpdate padding={padding} />
+            <section id="appointment-payment" className="border-gray-300 m-3">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="border p-6 rounded-lg shadow-md hover:shadow-lg transition bg-[#F3F4F6]">
+                  <h2 className="text-2xl font-bold mb-4 text-[#10B981]">
+                    📅 Book an Appointment
+                  </h2>
+                  <Appointment padding={(padding / 2)} />
+                </div>
+                <div className="border p-6 rounded-lg shadow-md hover:shadow-lg transition bg-[#F3F4F6]">
+                  <h2 className="text-2xl font-bold mb-4 text-[#F97316]">
+                    💳 Payment Corner
+                  </h2>
+                  <Payment padding={(padding / 2)} />
+                </div>
+              </div>
+            </section>
+            <div className={`border border-red-500 rounded-md m-3 p-6 bg-red-50 shadow-sm`}>
+              <h2 className="text-red-600 font-bold mb-2 text-lg">Hot Tax Update</h2>
+              <TaxUpdate padding={(padding / 2)} />
+            </div>
             <Contact padding={padding} />
           </>
         } />
