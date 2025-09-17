@@ -9,3 +9,46 @@
         grid-template-columns: 1fr 1fr;
     }
 }
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-slide {
+    animation: fadeIn 0.7s ease-in-out;
+}
+
+@keyframes smoothFadeUp {
+    from {
+        /* Start transparent and slightly lower */
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        /* Fade in to full opacity at the final position */
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-slide {
+    /* Apply the animation */
+    animation-name: smoothFadeUp;
+
+    /* Make the animation last 1 second */
+    animation-duration: 1s;
+
+    /* This timing function creates a very smooth ease-in and ease-out effect */
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}

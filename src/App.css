@@ -53,3 +53,12 @@ body {
 
     }
 }
+
+@keyframes highlight {
+  0%, 100% { color: #dc2626; text-shadow: 0 0 5px #fca5a5; }
+  50% { color: #b91c1c; text-shadow: 0 0 15px #ef4444; }
+}
+
+.highlight-animate {
+  animation: highlight 1.5s infinite;
+}

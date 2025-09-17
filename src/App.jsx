@@ -220,7 +220,10 @@ const NavHashLinkWrapper = ({ padding, navslider, navup, navdown }) => {
               </div>
             </section>
             <div className={`border border-red-500 rounded-md m-3 p-6 bg-red-50 shadow-sm`}>
-              <h2 className="text-red-600 font-bold mb-2 text-lg">Hot Tax Update</h2>
+              <h2 className="flex items-center gap-2 font-bold mb-2 text-lg highlight-animate">
+                <span className="text-2xl">📰</span>
+                New Tax Updates
+              </h2>
               <TaxUpdate padding={(padding / 2)} />
             </div>
             <Contact padding={padding} />
